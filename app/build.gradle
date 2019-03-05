@@ -10,7 +10,7 @@ android {
     compileSdkVersion 28
     defaultConfig {
         applicationId "br.com.fiap.pokemonadventure"
-        minSdkVersion 21
+        minSdkVersion 24
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
@@ -44,8 +44,28 @@ dependencies {
     kapt "com.google.dagger:dagger-android-processor:2.16"
     implementation 'com.google.dagger:dagger-android-support:2.15'
 
+    // RETROFIT
+    implementation 'com.squareup.retrofit2:retrofit:2.4.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
+
     // ViewModel and LiveData
     implementation "android.arch.lifecycle:extensions:1.1.1"
     kapt "android.arch.lifecycle:compiler:1.1.1"
+
+    // GSON
+    implementation 'com.google.code.gson:gson:2.8.5'
+
+    // DAGGER 2
+
+    implementation 'com.google.dagger:dagger:2.16'
+    kapt 'com.google.dagger:dagger-compiler:2.16'
+    kapt "com.google.dagger:dagger-android-processor:2.16"
+    implementation 'com.google.dagger:dagger-android-support:2.15'
+
+    // PICASSO
+    implementation 'com.squareup.picasso:picasso:2.71828'
+
+    implementation 'com.squareup.okhttp3:okhttp:3.13.1'
+
 
 }
