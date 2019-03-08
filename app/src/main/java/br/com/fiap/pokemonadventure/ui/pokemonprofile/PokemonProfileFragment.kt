@@ -17,7 +17,7 @@ import javax.inject.Inject
 class PokemonProfileFragment : Fragment() {
 
     @Inject
-    private lateinit var viewModeFactory: ViewModelProvider.Factory
+    lateinit var viewModeFactory: ViewModelProvider.Factory
 
     private lateinit var viewMode: PokemonProfileViewModel
 
