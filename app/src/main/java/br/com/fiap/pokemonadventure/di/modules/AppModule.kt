@@ -76,6 +76,6 @@ class AppModule {
     @Provides
     @Singleton
     fun providePokemonRepository(pokemonWebService: PokemonWebService, pokemonDao: PokemonDao, executor: Executor): PokemonRepository{
-        return providePokemonRepository(pokemonWebService, pokemonDao, executor)
+        return PokemonRepository(pokemonWebService, pokemonDao, executor)
     }
 }

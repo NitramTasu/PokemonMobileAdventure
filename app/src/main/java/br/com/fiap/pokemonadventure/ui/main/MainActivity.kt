@@ -35,5 +35,6 @@ class MainActivity : AppCompatActivity(), HasSupportFragmentInjector {
         supportFragmentManager
             .beginTransaction()
             .add(R.id.container, PokemonProfileFragment(), null)
+            .commit()
     }
 }
