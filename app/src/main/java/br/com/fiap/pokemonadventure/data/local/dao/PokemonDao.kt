@@ -16,4 +16,7 @@ interface PokemonDao{
 
     @Query("SELECT * FROM Pokemon WHERE id = :id")
     fun load(id: String): LiveData<Pokemon>
+
+    @Query("SELECT * FROM  Pokemon WHERE id = :id")
+    fun hasPokemon(id: String): Pokemon
 }

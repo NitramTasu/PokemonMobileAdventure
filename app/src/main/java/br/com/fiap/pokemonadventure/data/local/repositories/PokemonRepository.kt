@@ -19,25 +19,33 @@ class PokemonRepository @Inject constructor(
 ) {
 
     fun getPokemon(pokemonId: String): LiveData<Pokemon> {
+        refreshPokemon(pokemonId)
         return pokemonDao.load(pokemonId)
     }
 
-    fun savePokemonWeb(pokemonId: String) {
-        webService.getPokemon(pokemonId).enqueue(object : Callback<Pokemon> {
-            override fun onResponse(call: Call<Pokemon>, response: Response<Pokemon>) {
-                executor.execute {
-                    val pokemon = response.body()
-                    if (pokemon != null) {
-                        pokemonDao.save(pokemon)
+    private fun refreshPokemon(pokemonId: String) {
+
+        executor.execute {
+            val pokemon = pokemonDao.hasPokemon(pokemonId) != null
+
+            if (!pokemon){
+                webService.getPokemon(pokemonId).enqueue(object : Callback<Pokemon>{
+                    override fun onResponse(call: Call<Pokemon>, response: Response<Pokemon>) {
+                        executor.execute {
+                            val pokemon = response.body()
+                            if(pokemon != null){
+                                pokemonDao.save(pokemon)
+                            }
+                        }
                     }
-                }
+                    override fun onFailure(call: Call<Pokemon>, t: Throwable) {
+                        println(t.message)
+                    }
+                })
             }
-            override fun onFailure(call: Call<Pokemon>, t: Throwable) {
+        }
 
-            }
-        })
     }
-
 }
 
 
