@@ -5,6 +5,7 @@ import android.content.Context
 import android.support.multidex.MultiDex
 import android.support.multidex.MultiDexApplication
 import br.com.fiap.pokemonadventure.di.components.DaggerAppComponent
+import com.facebook.stetho.Stetho
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.HasActivityInjector
 import javax.inject.Inject
@@ -18,6 +19,7 @@ class MyApplication : MultiDexApplication(), HasActivityInjector {
     override fun onCreate() {
         super.onCreate()
         this.initDagger()
+        Stetho.initializeWithDefaults(this);
     }
 
     private fun initDagger() {

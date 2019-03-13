@@ -8,7 +8,8 @@ data class Pokemon(
 
     @PrimaryKey
     val id: Int,
-    val name: String
+    val name: String,
+    val types: ArrayList<PokeType>
     //val type: String,
     //val url: String
 )

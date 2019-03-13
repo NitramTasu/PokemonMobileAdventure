@@ -6,6 +6,7 @@ import br.com.fiap.pokemonadventure.data.local.MyDataBase
 import br.com.fiap.pokemonadventure.data.local.dao.PokemonDao
 import br.com.fiap.pokemonadventure.data.local.repositories.PokemonRepository
 import br.com.fiap.pokemonadventure.data.remote.PokemonWebService
+import com.facebook.stetho.okhttp3.StethoInterceptor
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import dagger.Module
@@ -54,6 +55,7 @@ class AppModule {
     @Singleton
     fun provideOkHttp(): OkHttpClient {
         return OkHttpClient.Builder()
+            .addNetworkInterceptor( StethoInterceptor())
             .build()
     }
 
