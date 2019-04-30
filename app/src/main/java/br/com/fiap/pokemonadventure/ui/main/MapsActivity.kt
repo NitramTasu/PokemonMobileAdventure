@@ -6,12 +6,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import br.com.fiap.pokemonadventure.R
+import br.com.fiap.pokemonadventure.util.ShareIntent
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
+import kotlinx.android.synthetic.main.activity_maps.*
+import kotlinx.android.synthetic.main.activity_maps.view.*
 
 
 class MapsActivity : Fragment(), OnMapReadyCallback {
@@ -31,6 +34,13 @@ class MapsActivity : Fragment(), OnMapReadyCallback {
         ///var mapFragment = fragmentManager?.findFragmentById(R.id.map) as SupportMapFragment
         var mapFragment = childFragmentManager.findFragmentById(R.id.map) as SupportMapFragment
         mapFragment.getMapAsync(this)
+
+
+        view.btn_share.setOnClickListener {
+            ShareIntent.share(this.requireActivity(), "Assunto do compartilhamento", "Texto Principal")
+        }
+
+
         return view
     }
 
