@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "879569896504",
+    "firebase_url": "https://copper-freedom-235122.firebaseio.com",
+    "project_id": "copper-freedom-235122",
+    "storage_bucket": "copper-freedom-235122.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:879569896504:android:0a646a1f7144073a",
+        "android_client_info": {
+          "package_name": "br.com.fiap.pokemonadventure"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "879569896504-412rm3s7b7ntlpaepoi8vsm3fe36oppf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "br.com.fiap.pokemonadventure",
+            "certificate_hash": "c204f0f07dbae723917fe2649e34f0e07ac31fa2"
+          }
+        },
+        {
+          "client_id": "879569896504-m0a12tqs2iisvh329bjp9vlidrttmep2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBh-rFeU20j3eNPWswYdYi8f8zuN5FcTUU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "879569896504-m0a12tqs2iisvh329bjp9vlidrttmep2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
